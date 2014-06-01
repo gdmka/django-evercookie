@@ -1,0 +1,3 @@
+Django>=1.4
+PIL==1.1.7
+django-dont-vary-on==0.1.1

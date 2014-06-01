@@ -1,0 +1,1 @@
+from django_evercookie.templatetags import *
