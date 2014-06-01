@@ -76,7 +76,7 @@ settings.static_url = '/cdn/'
 ```
 
 Using Templatetags
-__________________
+------------------
 
 Add this code to load evercookie in template and set a value.
 
@@ -102,11 +102,11 @@ The get method is as simple as adding
 to discover what was set in previous snippet.
 
 Acknowledgement
-_______________
+---------------
 Evercookie was developed by [Samy Kamkar](https://github.com/samyk/evercookie), with [contributions from others](https://github.com/samyk/evercookie/graphs/contributors)
 
 License
-_______________
+-------
 MIT
 
 
