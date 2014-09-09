@@ -82,7 +82,7 @@ Add this code to load evercookie in template and set a value.
 
 ```html
 {% load staticfiles %}
-<script src="{% static 'django_evercookie.swfobject-2.2.min.js' %}"></script>
+<script src="{% static 'django_evercookie/swfobject-2.2.min.js' %}"></script>
 <script src="{% url 'django_evercookie.views.evercookie_core' %}"></script>
 {% load evercookie_js_api %}
 {% set_evercookie ec_obj='evercookie' name='dummy' value='some_value' %}
