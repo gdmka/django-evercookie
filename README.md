@@ -40,7 +40,7 @@ Installation
 ------------
 1. Install Python Egg
 ```
-pip install git+https://github.com/gdmka/django_evercookie.git#egg=django_evercookie
+pip install git+https://github.com/gdmka/django_evercookie.git#egg=django-evercookie
 ```
 2. Add Django Evercookie to INSTALLED_APPS
 ```python
