@@ -101,6 +101,6 @@ def evercookie_core(request):
         'auth_path': settings.auth_path,
         'domain': settings.domain,
         'static_url': settings.static_url},
-         mimetype="text/javascript")
+         content_type="text/javascript")
 
 
