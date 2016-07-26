@@ -2,8 +2,10 @@ Django Evercookie
 =================
 
 Django Evercookie is an implementation of [Evercookie] (http://en.wikipedia.org/wiki/Evercookie) with Django backend services.
-Evecrookie core component was rebuilt to use of Django's batteries, so all configurations and hook-ups are done in plain Python and Django's templatetags 
+Evecrookie core component was rebuilt to use of Django's batteries, so all configurations and hook-ups are done in plain Python and Django's templatetags.
+
 Note: Django 1.5 or later required.
+
 
 Browser Storage Mechanisms Supported in Django Evercookie
 ---------------------------------------------------------
