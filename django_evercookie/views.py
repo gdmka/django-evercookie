@@ -73,7 +73,7 @@ def evercookie_png(request):
 
     base_img.save(buffer, 'PNG')
 
-    response = HttpResponse(content=buffer.getvalue(), mimetype="image/png", content_type="image/png")
+    response = HttpResponse(content=buffer.getvalue(), content_type="image/png")
     response['Last-Modified'] = 'Wed, 30 Jun 2010 21:36:48 GMT'
     response['Expires'] = 'Tue, 31 Dec 2030 23:30:45 GMT'
     response['Cache-Control'] = 'private, max-age=630720000'
