@@ -1,14 +1,13 @@
-try:
-    from django.conf.urls import url, patterns
-except ImportError:
-    from django.conf.urls.defaults import url, patterns
+from __future__ import unicode_literals
+from django.conf.urls import url
+from . import views
 
 """URLs differ from standart evercookie_<storage_method> to dodge easyprivacy blocking rules"""
 
-
-urlpatterns = patterns('django_evercookie.views',
-    url(r'^ecache', 'evercookie_cache', name='ecache'),
-    url(r'^epng', 'evercookie_png', name='epng'),
-    url(r'^ecetag', 'evercookie_etag', name='ecetag'),
-    url(r'^ecookie', 'evercookie_core', name='ecookie'),
-    url(r'^ecauth', 'evercookie_auth', name='ecauth'), )
+urlpatterns = [
+    url(r'^ecache/$', views.evercookie_cache, name='evercookie-ecache'),
+    url(r'^epng/$', views.evercookie_png, name='evercookie-epng'),
+    url(r'^ecetag/$', views.evercookie_etag, name='evercookie-ecetag'),
+    url(r'^ecookie/$', views.evercookie_core, name='evercookie-ecookie'),
+    url(r'^ecauth/$', views.evercookie_auth, name='evercookie-ecauth'),
+]
