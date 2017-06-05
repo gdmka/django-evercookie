@@ -1,7 +1,7 @@
  #-*- coding: utf-8 -*-
 
 from PIL import Image
-from StringIO import StringIO
+import io
 from copy import deepcopy
 from django_dont_vary_on.decorators import dont_vary_on
 
@@ -10,7 +10,9 @@ from django.shortcuts import render_to_response
 from django.core.urlresolvers import reverse
 
 from django_evercookie.helpers import cookie_exists
-from django_evercookie.config import settings
+from django_evercookie.config import Settings
+
+settings = Settings()
 
 @dont_vary_on('Cookie', 'Host')
 @cookie_exists(settings.cache_cookie_name)
@@ -62,7 +64,7 @@ def evercookie_png(request):
     x_axis = 0
     y_axis = 0
     index=0
-    buffer = StringIO()
+    buffer = io.StringIO()
 
     while index < len(new_cookie_value):
         base_img.putpixel((x_axis, y_axis), (ord(new_cookie_value[index]),
