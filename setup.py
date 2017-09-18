@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 dependency_links = [
-    'http://github.com/rain0r/django-dont-vary-on/tarball/master#egg=django-dont-vary-on-1.0',
+    'http://github.com/rain0r/django-dont-vary-on/tarball/master#egg=django_dont_vary_on-1.0',
 
 ]
 requirements = ['Django',
