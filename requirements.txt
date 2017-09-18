@@ -1,3 +1,3 @@
 Django
 Pillow >= 2.0.0
-https://github.com/rain0r/django-dont-vary-on
+git+https://github.com/rain0r/django-dont-vary-on
