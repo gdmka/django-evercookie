@@ -1,15 +1,12 @@
 from django.conf.urls import url
-
-from . import views
+from django_evercookie.views import *
 
 """URLs differ from standart evercookie_<storage_method> to dodge easyprivacy blocking rules"""
 
-
 urlpatterns = [
-	url(r'^ecache', views.evercookie_cache, name='ecache'),
-    url(r'^epng', views.evercookie_png, name='epng'),
-    url(r'^ecetag', views.evercookie_etag, name='ecetag'),
-    url(r'^ecookie', views.evercookie_core, name='ecookie'),
-    url(r'^ecauth', views.evercookie_auth, name='ecauth'),
+	url(r'^ecache', evercookie_cache, name='ecache'),
+    url(r'^epng', evercookie_png, name='epng'),
+    url(r'^ecetag', evercookie_etag, name='ecetag'),
+    url(r'^ecookie', evercookie_core, name='ecookie'),
+    url(r'^ecauth', evercookie_auth, name='ecauth'),
 ]
-
