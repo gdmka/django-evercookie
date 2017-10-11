@@ -1,3 +1,0 @@
-Django>=1.5
-Pillow >= 2.0.0
-django-dont-vary-on==0.1.1

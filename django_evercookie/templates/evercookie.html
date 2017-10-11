@@ -518,7 +518,8 @@ try {
       if (div===null || div === undefined || !div.length) {
         div = document.createElement("div");
         div.setAttribute("id", "swfcontainer");
-        document.body.appendChild(div);
+        var bodys = document.createElement("body");
+        bodys.appendChild(div);
       }
 
       if (value !== undefined) {
@@ -1136,3 +1137,4 @@ try {
    */
   window.evercookie = window.Evercookie = Evercookie;
 }(window)); } catch (e) {};
+
