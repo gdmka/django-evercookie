@@ -6,6 +6,12 @@ Evecrookie core component was rebuilt to use of Django's batteries, so all confi
 
 Note: Django 1.5 or later required.
 
+Contributions
+-----------------
+The project hasn't been mainained for quite some time.
+Afaik later Django versions have some API changes that require the backend to be modified.
+If you want to contribute to the project and keep it up to date, please send pull requests.
+
 
 Browser Storage Mechanisms Supported in Django Evercookie
 ---------------------------------------------------------
