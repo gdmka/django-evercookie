@@ -4,7 +4,7 @@ requirements = [l.strip() for l in open('requirements.txt').readlines()]
 
 setup(
      name='django_evercookie',
-     version='0.1',
+     version='0.2',
      install_requires = requirements,
      packages = find_packages(),
      include_package_data = True, 

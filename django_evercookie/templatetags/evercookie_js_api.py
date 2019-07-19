@@ -1,12 +1,9 @@
 from django import template
-from django.core.urlresolvers import reverse
-from random import random
 from django_evercookie.config import settings
 register = template.Library()
 
 
 """Set evercookie"""
-
 @register.simple_tag
 def set_evercookie(ec_obj, name, value=None):
     if value is None:
@@ -20,9 +17,7 @@ var %(ec_obj)s=new evercookie();
 </script>''' % context_dict
 
 
-
 """Cookies will be re-setted with best candidate"""
-
 @register.simple_tag
 def reactivate_evercookie(ec_obj, name):
     context_dict = {"ec_obj": ec_obj, "name": name}
@@ -40,8 +35,8 @@ def reactivate_evercookie(ec_obj, name):
 setTimeout(getC, 300);
 </script>''' % context_dict
 
-"""Cookies won't be not re-setted"""
 
+"""Cookies won't be not re-setted"""
 @register.simple_tag
 def rediscover_evercookie(ec_obj, name):
     context_dict = {"ec_obj": ec_obj, "name": name}
