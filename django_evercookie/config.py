@@ -1,8 +1,4 @@
 from django.conf import settings
-from django.contrib.sites.models import Site
-
-
-current_site = Site.objects.get_current()
 
 
 class Meta(type):
@@ -28,7 +24,7 @@ class Settings(object):
              history='false',
              java='false',
              silverlight='false',
-             domain='.' + current_site.domain,
+             domain='.' + settings.SESSION_COOKIE_DOMAIN,
              tests=10,
              base_url='',
              auth_path='false',
