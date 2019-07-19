@@ -58,14 +58,14 @@ INSTALLED_APPS += ('django_evercookie',)
 3. Add RemoveUnneededVaryHeadersMiddleware at the top of MIDDLEWARE_CLASSES in settings.py:
 ```python
 MIDDLEWARE_CLASSES = (
-    'django_dont_vary_on.middleware.RemoveUnneededVaryHeadersMiddleware',
+    'django_evercookie.middleware.RemoveUnneededVaryHeadersMiddlewareCompat',
     'django.contrib.sessions.middleware.SessionMiddleware',
     ...
     )
 ```
 4. Add routing in urls.py
 ```python
-urlpatterns += patterns('', ('', include('django_evercookie.urls')),)
+urlpatterns += url('', include((evercookie_urls, 'django_evercookie'))),
 ```
 
 Basic Configuration

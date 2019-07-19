@@ -1,15 +1,15 @@
 from django.conf import settings
-from django.contrib.sites.models import Site
 
-current_site = Site.objects.get_current()
 
 class Meta(type):
     def __init__(cls, *args, **kwargs):
         cls.instance = None
+
     def __call__(cls, *args, **kwargs):
         if cls.instance is None:
             cls.instance = super(Meta, cls).__call__(*args, **kwargs)
         return cls.instance
+
 
 class Settings(object):
     """Django Evercookie Settings Interface"""
@@ -24,7 +24,7 @@ class Settings(object):
              history='false',
              java='false',
              silverlight='false',
-             domain='.'+current_site.domain,
+             domain='.' + settings.SESSION_COOKIE_DOMAIN,
              tests=10,
              base_url='',
              auth_path='false',

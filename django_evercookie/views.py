@@ -1,21 +1,22 @@
- #-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 from PIL import Image
-from StringIO import StringIO
+from io import BytesIO
 from copy import deepcopy
+
+from django.urls import reverse
 from django_dont_vary_on.decorators import dont_vary_on
 
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
-from django.core.urlresolvers import reverse
 
 from django_evercookie.helpers import cookie_exists
 from django_evercookie.config import settings
 
+
 @dont_vary_on('Cookie', 'Host')
 @cookie_exists(settings.cache_cookie_name)
 def evercookie_cache(request):
-
     cookie = request.COOKIES[settings.cache_cookie_name]
     response = HttpResponse(content=cookie, content_type='text/html; charset=UTF-8')
     response['Last-Modified'] = 'Wed, 30 Jun 2010 21:36:48 GMT'
@@ -25,9 +26,9 @@ def evercookie_cache(request):
 
     return response
 
+
 @dont_vary_on('Cookie', 'Host')
 def evercookie_etag(request):
-
     if settings.etag_cookie_name not in request.COOKIES:
         if 'HTTP_IF_NONE_MATCH' not in request.META:
             response = HttpResponse()
@@ -43,9 +44,9 @@ def evercookie_etag(request):
 
     return response
 
+
 @cookie_exists(settings.png_cookie_name)
 def evercookie_png(request):
-
     base_img = Image.new('RGB', (200, 1), color=None)
     cookie_value = list(request.COOKIES[settings.png_cookie_name])
     quotient, remainder = divmod(len(cookie_value), 3)
@@ -62,7 +63,7 @@ def evercookie_png(request):
     x_axis = 0
     y_axis = 0
     index=0
-    buffer = StringIO()
+    buffer = BytesIO()
 
     while index < len(new_cookie_value):
         base_img.putpixel((x_axis, y_axis), (ord(new_cookie_value[index]),
@@ -80,14 +81,15 @@ def evercookie_png(request):
 
     return response
 
+
 def evercookie_auth(request):
     """ Boilerplate view  """
     return HttpResponse()
 
-def evercookie_core(request):
 
-    return render_to_response('evercookie.html',
-      {'history': settings.history,
+def evercookie_core(request):
+    return render_to_response('evercookie.html', {
+        'history': settings.history,
         'java': settings.java,
         'tests': settings.tests,
         'silverlight': settings.silverlight,
@@ -100,7 +102,9 @@ def evercookie_core(request):
         'cache_path': reverse(settings.cache_path),
         'auth_path': settings.auth_path,
         'domain': settings.domain,
-        'static_url': settings.static_url},
-         content_type="text/javascript")
+        'static_url': settings.static_url
+      },
+      content_type="text/javascript"
+    )
 
 

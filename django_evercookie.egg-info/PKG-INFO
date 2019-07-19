@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: django-evercookie
+Version: 0.2
+Summary: Evercookie for Django
+Home-page: https://github.com/gdmka/django_evercookie
+Author: Alexey Haidamaka
+Author-email: ahaidamaka@gmail.com
+License: MIT License
+Description: UNKNOWN
+Keywords: django evercookie
+Platform: UNKNOWN
