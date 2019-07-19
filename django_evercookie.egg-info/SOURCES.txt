@@ -6,6 +6,7 @@ setup.py
 django_evercookie/__init__.py
 django_evercookie/config.py
 django_evercookie/helpers.py
+django_evercookie/middleware.py
 django_evercookie/urls.py
 django_evercookie/views.py
 django_evercookie.egg-info/PKG-INFO
