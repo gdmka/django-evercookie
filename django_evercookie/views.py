@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from PIL import Image
-from io import StringIO
+from io import BytesIO
 from copy import deepcopy
 
 from django.urls import reverse
@@ -63,7 +63,7 @@ def evercookie_png(request):
     x_axis = 0
     y_axis = 0
     index=0
-    buffer = StringIO()
+    buffer = BytesIO()
 
     while index < len(new_cookie_value):
         base_img.putpixel((x_axis, y_axis), (ord(new_cookie_value[index]),
